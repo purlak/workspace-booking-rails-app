@@ -38,7 +38,6 @@ WorkSpace
     
 Building 
     Has many workspaces 
-    has many users through users_workspace
     
 User 
     has many workspaces, through users_workspace
