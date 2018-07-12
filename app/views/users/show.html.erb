@@ -1,9 +1,10 @@
+<h1>User's summary page</h1>
 
-<h2>Name: <%= @user.name%>'s summary page</h2>
-<h2>Age: <%= @user.age%></h2>
-<h2>Email: <%= @user.email%></h2>
+<h3>Name: <%= @user.name%></h3>
+<h4>Age: <%= @user.age%></h4>
+<h4>Email: <%= @user.email%></h4>
 
 <% if @user.admin %>
-    <h2> ADMIN</h2>
+    <h4> Status: ADMIN</h4>
 <% end %>
 
