@@ -9,13 +9,18 @@ class BuildingsController < ApplicationController
     end 
     
     def create
-        @building =  Building.find_by(params[:id])
+        @building =  Building.create(building_params) 
+        #binding.pry
         if @building.save
             redirect_to @building
             
         else 
             render :new 
         end 
+    end 
+    
+    def show
+        @building = Building.find_by(params[:id])
     end 
     
     private
