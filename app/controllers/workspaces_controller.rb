@@ -20,6 +20,6 @@ class WorkspacesController < ApplicationController
     private
     
     def workspace_params
-        params.require(:building).permit(:workspace_type, :building_id)
+        params.require(:workspace).permit(:workspace_type, :building_id)
     end 
 end
