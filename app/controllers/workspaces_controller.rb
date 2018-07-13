@@ -4,17 +4,23 @@ class WorkspacesController < ApplicationController
     end 
     
     def new
-        @workspace = Workspace.new
+         @workspace = Workspace.new
     end 
     
     def create
-        @workspace =  Workspace.find_by(params[:id])
+        @building = Building.find_by(params[:location_name])
+        @workspace = @building.workspaces.build(workspace_params)
+        @workspace.save
+        #binding.pry
         if @workspace.save
-            redirect_to @workspace
-            
+            redirect_to @building.workspaces      
         else 
             render :new 
         end 
+    end 
+    
+    def show
+        
     end 
     
     private
