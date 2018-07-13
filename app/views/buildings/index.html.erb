@@ -2,6 +2,6 @@
 
 <% @buildings.each do |building|%>
     <ul>
-        <li> <%= building.location_name%> - <%= building.address%> </li>
+        <li> <%= link_to building.location_name, building_path(building)%> - <%= building.address%> </li>
     </ul>
-    <% end %>
+<% end %>
