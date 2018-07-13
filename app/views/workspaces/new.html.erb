@@ -6,7 +6,7 @@
     <%= f.select :workspace_type, [ 'Desk','Small Conference Room', 'Large Conference Room' ], :prompt => 'Select One' %>
 
     <%= f.label :Building %>
-    <%= f.collection_select :building_id, Building.all, :name, :location_name%>
+    <%= f.collection_select :building_id, Building.all, :id, :location_name, :prompt => 'Select One' %>
    
     <%= f.submit %>
 <% end %>
