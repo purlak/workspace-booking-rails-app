@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2018_07_13_143233) do
     t.integer "building_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.integer "current_user_id"
   end
 
 end

@@ -10,11 +10,11 @@ class WorkspacesController < ApplicationController
     def create
         @building = Building.find_by(id: params[:workspace][:building_id])
         @workspace = @building.workspaces.build(workspace_params)
-        @workspace.user_id = current_user.id
+        #@workspace.user_id = current_user.id
         
         if @workspace.save
-            binding.pry
-            redirect_to current_user     
+            #binding.pry
+            redirect_to @workspace     
         else 
             render :new 
         end 
