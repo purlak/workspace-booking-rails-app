@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
         end     
     end 
     
+    def admin_access
+        if !current_user.admin
+            redirect_to @current_user
+        end 
+    end 
+    
 end
