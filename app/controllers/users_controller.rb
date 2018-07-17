@@ -30,10 +30,4 @@ class UsersController < ApplicationController
          params.require(:user).permit(:name, :age, :email, :admin, :password)
     end
     
-    def logged_in
-        if !session[:user_id]
-            redirect_to '/'
-        end     
-    end 
-    
 end
