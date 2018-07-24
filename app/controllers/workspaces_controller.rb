@@ -1,4 +1,7 @@
 class WorkspacesController < ApplicationController
+    before_action :admin_access
+    skip_before_action :admin_access, only: [:index]
+    
     def index 
         @workspaces = Workspace.all
     end 
