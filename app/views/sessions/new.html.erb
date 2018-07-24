@@ -1,4 +1,7 @@
-<h3>Login here: </h3>
+<h3><%= link_to('Log in with Github!', '/auth/github') %></h3>
+
+<h3>or, login below: </h3>
+
 <%= form_for @user, :url => url_for(controller: 'sessions', action: 'create') do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email %>
