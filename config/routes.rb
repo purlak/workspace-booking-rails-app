@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     #Login routes
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
+    
+    #Logout route
+    get 'logout' => 'sessions#logout'
 
     
 end
