@@ -1,4 +1,6 @@
 class BuildingsController < ApplicationController
+    before_action :admin_access
+    skip_before_action :admin_access, only: [:index]
     
     def index 
         @buildings = Building.all
