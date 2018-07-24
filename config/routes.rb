@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     
     root to: "application#index"
     
+    get '/auth/github/callback' => 'sessions#githubcreate'
+    
     resources :users
     resources :workspaces
     resources :buildings

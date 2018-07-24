@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'dotenv-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
