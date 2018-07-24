@@ -7,7 +7,7 @@
 <% if @user.admin %>
     <h4> Status: ADMIN</h4>
     <br/>
-    <h3>Admin Actions:</h3>
+    <h3>Admin-only Actions:</h3>
     <p> <a href="/buildings/new">1. Add a new location/building</a></p>
     <p> <a href="/workspaces/new">2. Add a new workspace</a></p>
 
@@ -19,10 +19,12 @@
 <h3>User Bookings:</h3>
 
 <!-- 1. Make a booking -->
-<p> <a href="/bookings/new">1. Book a new workspace</a></p>
+<p><%= link_to "1.View all Locations/Buildings", buildings_path %></p>
+
+<p> <a href="/bookings/new">2. Book a new workspace</a></p>
 
 <!-- 2. View list of reserved spaces-->
-<p> <a href="/bookings">2. View/Cancel a reserved workspace</a></p>
+<p> <a href="/bookings">3. View/Cancel a reserved workspace</a></p>
 
 <!-- Logout -->
-<p> <a href="/logout">3. Logout</a></p>
+<p> <a href="/logout">4. Logout</a></p>
