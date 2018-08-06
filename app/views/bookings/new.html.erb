@@ -9,9 +9,9 @@
     <%= f.time_field :booking_time%>
 
      <%= f.label :Duration %>
-    <%= f.number_field :booking_duration%>
+    <%= f.number_field :booking_duration, min: 1, max: 24%> hours 
    
      <%= f.hidden_field :workspace_id, :value => @workspace.id %>
-
+    
     <%= f.submit %>
 <% end %>
