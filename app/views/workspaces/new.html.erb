@@ -7,6 +7,6 @@
 
     <%= f.label :Building %>
     <%= f.collection_select :building_id, Building.all, :id, :location_name, :prompt => 'Select One' %>
-   
+
     <%= f.submit %>
 <% end %>
