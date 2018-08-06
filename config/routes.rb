@@ -6,10 +6,13 @@ Rails.application.routes.draw do
     get '/auth/github/callback' => 'sessions#githubcreate'
     
     resources :users
-    resources :workspaces
-    resources :buildings
-    resources :bookings, only: [:create]
+    resources :workspaces do 
+         resources :bookings
+    end 
     
+    resources :buildings
+    
+   
     #Signup routes
     get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
@@ -20,6 +23,7 @@ Rails.application.routes.draw do
     
     #Logout route
     get 'logout' => 'sessions#logout'
+
 
     
 end
