@@ -15,10 +15,8 @@ class WorkspacesController < ApplicationController
         @building = Building.find_by(id: params[:workspace][:building_id])
         @workspace = @building.workspaces.build(workspace_params)
         @workspace.availability = true
-        #@workspace.user_id = current_user.id
-        
+       
         if @workspace.save
-            #binding.pry
             redirect_to @building     
         else 
             render :new 
