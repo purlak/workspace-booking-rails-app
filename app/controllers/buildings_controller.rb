@@ -3,7 +3,7 @@ class BuildingsController < ApplicationController
     skip_before_action :admin_access, only: [:index, :show]
     
     def index 
-        @buildings = Building.all
+        @buildings = Building.all.sort_alphabetically
         @user = current_user
     end 
     

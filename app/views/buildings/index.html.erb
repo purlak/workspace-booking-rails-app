@@ -1,6 +1,6 @@
 <h3> List of all Buildings/Locations</h3>
 
-<% @buildings.sort_by{|b| b[:location_name]}.each do |building|%>
+<% @buildings.each do |building|%>
     <ul>
         <li> <%= link_to building.location_name, building_path(building)%> - <%= building.address%> </li>
     </ul>
