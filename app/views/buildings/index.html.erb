@@ -5,3 +5,6 @@
         <li> <%= link_to building.location_name, building_path(building)%> - <%= building.address%> </li>
     </ul>
 <% end %>
+
+<br/>
+<p><%= link_to "Go Back", user_path(@user.id) %></p>

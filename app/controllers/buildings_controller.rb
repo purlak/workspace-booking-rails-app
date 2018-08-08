@@ -4,6 +4,8 @@ class BuildingsController < ApplicationController
     
     def index 
         @buildings = Building.all
+        @user = current_user
+        #binding.pry
     end 
     
     def new
@@ -12,10 +14,8 @@ class BuildingsController < ApplicationController
     
     def create
         @building =  Building.create(building_params) 
-        #binding.pry
         if @building.save
             redirect_to @building
-            
         else 
             render :new 
         end 
