@@ -2,4 +2,4 @@
 
 <p>Booking Date: <%= @booking.booking_date%> - Start Time: <%= @booking.booking_time%>:00  -  Duration: <%= @booking.booking_duration%> hours  </p>
 
-<p><%= link_to "Go Back", user_path(current_user.id) %></p>
+<p><%= link_to "Go Back", user_path(@booking.user_id) %></p>
