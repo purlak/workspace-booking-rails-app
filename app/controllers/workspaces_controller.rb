@@ -13,7 +13,7 @@ class WorkspacesController < ApplicationController
     
     def create
         @building = Building.find_by(id: params[:workspace][:building_id])
-        binding.pry
+        @user = current_user
         @workspace = @building.workspaces.build(workspace_params)
         @workspace.availability = true
        

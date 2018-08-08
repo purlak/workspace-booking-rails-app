@@ -21,6 +21,7 @@ class BuildingsController < ApplicationController
     end 
     
     def show
+        @user = current_user
         @building = Building.find_by(:id => params[:id])
     end 
     
