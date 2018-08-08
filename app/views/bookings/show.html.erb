@@ -1,3 +1,5 @@
-<h1>User's bookings </h1>
+<h1><%= @booking.user.name %>, your workspace has been booked. </h1>
 
-<h3>Booking Date <%= @booking.booking_date%> - Booking Time <%= @booking.booking_time%> - Booking Duration <%= @booking.booking_duration%>  </h3>
+<p>Booking Date: <%= @booking.booking_date%> - Start Time: <%= @booking.booking_time%>:00  -  Duration: <%= @booking.booking_duration%> hours  </p>
+
+<p><%= link_to "Go Back", user_path(current_user.id) %></p>
