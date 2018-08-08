@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     
     get '/auth/github/callback' => 'sessions#githubcreate'
     
-    resources :users 
+    resources :users do 
+        resources :bookings, only: [:index]
+    end 
     
     resources :workspaces, only: [:new, :create] do 
          resources :bookings, only: [:new, :create, :show]
