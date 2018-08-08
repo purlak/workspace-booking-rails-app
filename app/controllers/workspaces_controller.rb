@@ -8,16 +8,17 @@ class WorkspacesController < ApplicationController
     
     def new
         @user = current_user
-         @workspace = Workspace.new
+        @workspace = Workspace.new
     end 
     
     def create
         @building = Building.find_by(id: params[:workspace][:building_id])
+        binding.pry
         @workspace = @building.workspaces.build(workspace_params)
         @workspace.availability = true
        
         if @workspace.save
-            redirect_to @building     
+            redirect_to building_path(@building.id)     
         else 
             render :new 
         end 

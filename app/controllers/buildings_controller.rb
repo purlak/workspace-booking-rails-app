@@ -21,7 +21,7 @@ class BuildingsController < ApplicationController
     end 
     
     def show
-        @building = Building.find_by(params[:id])
+        @building = Building.find_by(:id => params[:id])
     end 
     
     private
