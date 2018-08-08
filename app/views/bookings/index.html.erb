@@ -1,0 +1,11 @@
+<h3> <%= @user.name %> 's bookings</h3>
+
+<% @user.bookings.each do |booking|%>
+    <ul>
+        <li> Booking Date: <%= booking.booking_date%> - Start Time: <%= booking.booking_time%>:00  -  Duration: <%= booking.booking_duration%> hours  
+        </li>
+    </ul>
+<% end %>
+
+<br/>
+<p><%= link_to "Go Back", user_path(@user.id) %></p>

@@ -2,12 +2,12 @@ class BookingsController < ApplicationController
     
     def index 
         @bookings = Booking.all
+        @user = current_user
     end 
     
     def new
         @workspace = Workspace.find_by(id: params[:workspace_id])
-        @booking = Booking.new
-        
+        @booking = Booking.new  
     end 
     
     def create
@@ -24,8 +24,7 @@ class BookingsController < ApplicationController
     end 
     
     def show
-            @booking = Booking.find_by(:id => params[:id])
-            #binding.pry
+            @booking = Booking.find_by(:id => params[:id])x
     end 
     
     private

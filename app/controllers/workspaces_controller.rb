@@ -7,6 +7,7 @@ class WorkspacesController < ApplicationController
     end 
     
     def new
+        @user = current_user
          @workspace = Workspace.new
     end 
     
@@ -18,7 +19,7 @@ class WorkspacesController < ApplicationController
         
         if @workspace.save
             #binding.pry
-            redirect_to @workspace     
+            redirect_to @building     
         else 
             render :new 
         end 
