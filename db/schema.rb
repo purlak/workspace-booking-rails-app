@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_06_145820) do
+ActiveRecord::Schema.define(version: 2018_08_08_051237) do
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "booking_date"
+    t.string "booking_date"
     t.integer "booking_time"
     t.integer "booking_duration"
     t.integer "user_id"
