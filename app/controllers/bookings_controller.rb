@@ -12,14 +12,13 @@ class BookingsController < ApplicationController
     
     def create
         #@building = Building.find_by(id: params[:workspace][:building_id])
-        #binding.pry
         @workspace = Workspace.find_by(id: params[:workspace_id])
-        @booking = Booking.create(id: params[:id])
-        
+        @booking = Booking.create(booking_params)
+        @booking.user_id = current_user.id
         binding.pry
-         
+     
         if @booking.save
-               redirect_to @booking     
+               redirect_to @user     
         else 
             render :new 
         end 
@@ -30,5 +29,9 @@ class BookingsController < ApplicationController
     end 
     
     private
+    
+    def booking_params
+        params.require(:booking).permit(:bookings_date, :booking_time, :booking_duration, :workspace_id, :user_id)
+    end 
     
 end
