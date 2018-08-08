@@ -7,25 +7,25 @@ class BookingsController < ApplicationController
     def new
         @workspace = Workspace.find_by(id: params[:workspace_id])
         @booking = Booking.new
-        #binding.pry
+        
     end 
     
     def create
-        #@building = Building.find_by(id: params[:workspace][:building_id])
-        #@user = User.find_by(id: params[:id])
+       
         @workspace = Workspace.find_by(id: params[:workspace_id])
         @booking = Booking.create(booking_params)
         @booking.user_id = current_user.id
-        #binding.pry
+       
         if @booking.save
-               redirect_to workspace_booking_path
+               redirect_to workspace_booking_path(@workspace, @booking)
         else 
             render :new 
         end 
     end 
     
     def show
-        
+            @booking = Booking.find_by(:id => params[:id])
+            #binding.pry
     end 
     
     private
