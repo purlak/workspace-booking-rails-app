@@ -1,5 +1,6 @@
 class WorkspacesController < ApplicationController
     before_action :admin_access
+    before_action :current_user
     skip_before_action :admin_access, only: [:index]
     
     def index 
@@ -7,13 +8,13 @@ class WorkspacesController < ApplicationController
     end 
     
     def new
-        @user = current_user
+       # @@user = current_user
         @workspace = Workspace.new
     end 
     
     def create
         @building = Building.find_by(id: params[:workspace][:building_id])
-        @user = current_user
+    #@user = current_user
         @workspace = @building.workspaces.build(workspace_params)
         @workspace.availability = true
        

@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
+    before_action :current_user
     
     def index 
         @bookings = Booking.all
-        @user = current_user
+        #@user = current_user
         
     end 
     
