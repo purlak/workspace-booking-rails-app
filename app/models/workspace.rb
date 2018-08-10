@@ -3,5 +3,6 @@ class Workspace < ApplicationRecord
     belongs_to :building
     has_many :bookings
     
-    #to add validations
+   validates :workspace_type, presence:true
+    
 end

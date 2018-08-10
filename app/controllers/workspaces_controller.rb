@@ -13,16 +13,16 @@ class WorkspacesController < ApplicationController
     end 
     
     def create
-        @building = Building.find_by(id: params[:workspace][:building_id])
-    #@user = current_user
-        @workspace = @building.workspaces.build(workspace_params)
-        @workspace.availability = true
+            @workspace = Workspace.new(workspace_params)# 
+            @workspace.availability = true
        
-        if @workspace.save
-            redirect_to building_path(@building.id)     
-        else 
-            render :new 
-        end 
+            if @workspace.save
+                redirect_to building_path(@workspace.building_id)     
+        
+            else 
+                render :new 
+            end
+
     end 
     
     def show
